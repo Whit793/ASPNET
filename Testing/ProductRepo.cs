@@ -8,7 +8,7 @@ using Dapper;
 
 namespace Testing
 {
-    public class ProductRepo : IProductRepo
+    public class ProductRepo : IProductRepository
     {
         private readonly IDbConnection _conn;
 
@@ -17,14 +17,14 @@ namespace Testing
             _conn = conn;
         }
 
-        public IEnumerable<ProductModel> GetAllProducts()
+        public IEnumerable<Product> GetAllProducts()
         {
-            return _conn.Query<ProductModel>("SELECT * FROM products;");
+            return _conn.Query<Product>("SELECT * FROM PRODUCTS;");
         }
 
-        public ProductModel GetProduct(int id)
+        public Product GetProduct(int id)
         {
-            return (ProductModel)_conn.QuerySingle<ProductModel>("SELECT * FROM PRODUCTS WHERE PRODUCTID = @id", new { id = id });
+            return (Product)_conn.QuerySingle<Product>("SELECT * FROM PRODUCTS WHERE PRODUCTID = @id", new { id = id });
         }
 
         

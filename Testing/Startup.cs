@@ -33,7 +33,7 @@ namespace Testing
 
             });
 
-            services.AddTransient<IProductRepo, ProductRepo>();
+            services.AddTransient<IProductRepository, ProductRepo>();
 
 
             services.AddControllersWithViews();

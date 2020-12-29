@@ -8,9 +8,9 @@ namespace Testing.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly IProductRepo repo;
+        private readonly IProductRepository repo;
 
-        public ProductController(IProductRepo repo)
+        public ProductController(IProductRepository repo)
         {
             this.repo = repo;
         }
